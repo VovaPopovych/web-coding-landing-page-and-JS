@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volodymyr Popovych's Coding Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="List of HTML, CSS and JS projects done by Volodymyr Popovych">
+    <meta name="author" content="Volodymyr Popovych">
+    <meta name="robots" content="follow, index">
+    <meta property="og:title" content="Volodymyr Popovych's Coding Portfolio" />
+    <meta property="og:description" content="Explore the coding projects of Volodymyr Popovych, showcasing HTML, CSS, and JavaScript skills." />
+    <meta property="og:image" content="images/coding-portfolio-ogimage.png"/>
+    <meta property=”og:type” content=”blog”/>
+    <script type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Volodymyr Popovych's Coding Portfolio",
+            "description": "Explore the coding projects of Volodymyr Popovych, showcasing HTML, CSS, and JavaScript skills.",
+            "author": {
+                "@type": "Person",
+                "name": "Volodymyr Popovych"
+            }            
+    }
+    </script>
+</head>
+<body>
+<div class="page-content-wrapper">
+            <div class="mainContainer">
+                  <h1 id="h1">Coding Portfolio</h1>
+                  <p class="paragraph-1-CTA">Learn more about Volodymyr's basic coding skills!</p>
+
+                  <button id="first-ctaButton">Check the Projects</button>
+                  <p id="first-cta-outputArea"></p>
+
+                  <script src="script.js"></script>
+            </div>
+
+            <div id="projectsContainer">
+                  <a class="project-card-link" href="jsProjects/read-time-calculator.html" target="_blank">
+                        <div class="projectCard 1">
+                              <h2>Read Time Calculator</h2>
+                              <p>This project demonstrates a basic reading time calculation functionality.</p>
+                              <a class="project-card-button" href="jsProjects/read-time-calculator.html" target="_blank">View the Project</a>
+                        </div>
+                  </a>
+                  <a class="project-card-link" href="jsProjects/marketing-blocks.html" target="_blank">
+                        <div class="projectCard 2">
+                              <h2>Marketing Blocks</h2>
+                              <p>This project is consistent of three advertising blocks that marketers usually use for their websites.</p>
+                              <a class="project-card-button" href="jsProjects/marketing-blocks.html" target="_blank">View the Project</a>
+                        </div>
+                  </a>
+            </div>
+      </div> <footer class="footer">
+            <hr>
+            <p class="copyright">&copy; <span id="curYr"></span> Volodymyr Popovych. All rights reserved.<br><br>Contact: <a href="mailto:vovapopovy4@gmail.com">vova.popovy4@gmail.com</a></p>
+      </footer>
+      <script>
+            document.getElementById('curYr').textContent = new Date().getFullYear();
+      </script>
+</body>
+</html>

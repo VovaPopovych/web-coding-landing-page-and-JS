@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Time Calculator</title>
+    <link rel="stylesheet" href="../style.css">
+    <meta name="descriptoin" content="Calculate the time a usual person needs to read the text!">
+    <meta name="author" content="Volodymyr Popovych">
+    <meta name="robots" content="follow, index">
+    <meta property="og:title" content="Reading Time Calculator" />
+    <meta property="og:description" content="Calculate the time a usual person needs to read the text!" />
+    <meta property="og:image" content="images/coding-portfolio-ogimage.png"/>
+    <meta property=”og:type” content=”website”/>
+    <script type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Reading Time Calculator",
+            "description": "Calculate the time a usual person needs to read the text!",
+            "author": {
+                "@type": "Person",
+                "name": "Volodymyr Popovych"
+            }            
+    }
+    </script>
+</head>
+<body>
+<div class="page-content-wrapper">
+     <div class="mainContainer">
+            <h1 id="h1">Reading Time Calculator</h1>
+            <p class="paragraph-1-CTA">Calculate the time a usual person needs to read your text!</p>
+            
+            <textarea id="textInput"
+                      rows="10" cols="50" 
+                      placeholder="Enter your text"></textarea>
+
+            <div id="readTimeResult">
+                    <p class="readTimeOutput">Words: <span id="wordsCount"></span> <br style="margin: top 0.9em;"> Reading time: <span id="readMinutes"></span> <span id="readSeconds"></span></p>
+            </div>
+
+            <button id="actionButton">Calculate</button>
+
+            <script src="script-reading-time.js"></script>
+    </div>
+</div>
+      <footer class="footer">
+            <hr>
+            <p class="copyright">&copy; <span id="curYr"></span> Volodymyr Popovych. All rights reserved.<br><br>Contact: <a href="mailto:vovapopovy4@gmail.com">vova.popovy4@gmail.com</a></p>
+      </footer>
+      <script>
+            document.getElementById('curYr').textContent = new Date().getFullYear();
+      </script>
+</body>
+</html>
