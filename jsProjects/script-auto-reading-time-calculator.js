@@ -10,7 +10,7 @@ const errorMessage = document.getElementById("errorMessage");
 resultContainer.style.display = "none";
 
 // Function to calculate reading time
-actionButton.addEventListener('click', calculateReadingTime);
+textInput.addEventListener('input', calculateReadingTime);
 
 function calculateReadingTime () {
     // Get the text from the textarea
@@ -19,7 +19,7 @@ function calculateReadingTime () {
     let wordsArray = textForCount.trim().split(/\s+/); // This is a crucial first step. It cleans up any leading or trailing spaces, which would otherwise give you a false word count. This shows you're thinking about real-world scenarios, not just ideal ones.//
 
     //count the number of words in the text input//
-    let wordsCount = wordsArray.length;
+    let wordsCount = textForCount.trim() === '' ? 0 : wordsArray.length;
     wordsCountOutput.innerHTML = wordsCount;
 
     //If the text is empty set the alert and return//
@@ -33,6 +33,8 @@ function calculateReadingTime () {
         readSecondsOutput.innerHTML = "";
         wordsCountOutput.innerHTML = "0";
         return;
+    } else {
+        errorMessage.style.display = "none"; // Clear any previous error message
     }
 
     //Do the math for Reading Time. WPM AVG is 238 words// 
@@ -43,14 +45,11 @@ function calculateReadingTime () {
         readSeconds = readSeconds % 60; // Get the remaining seconds after calculating minutes
         readMinutesOutput.innerHTML = readminutes + " min";
         readSecondsOutput.innerHTML = Math.round(readSeconds) + " sec";
-        errorMessage.style.display = "none"; // Clear any previous error message
     } else if (readSeconds === 0) {
         readSecondsOutput.innerHTML = "";
-        errorMessage.style.display = "none"; // Clear any previous error message
     } else if (readSeconds < 60) {
         readMinutesOutput.innerHTML = "";
         readSecondsOutput.innerHTML = Math.round(readSeconds) + " sec";
-        errorMessage.style.display = "none"; // Clear any previous error message
     }
 
     // Display the results in the output area//
