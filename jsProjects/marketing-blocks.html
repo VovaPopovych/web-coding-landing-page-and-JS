@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Bonanza: Fresh Bananas Delivered to Your Door</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style-banana.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <meta name="author" content="Volodymyr Popovych">
+    <meta name="robots" content="follow, index">
+    <meta property="og:title" content="Banana Bonanza: Fresh Bananas Delivered to Your Door" />
+    <meta property="og:description" content="From tree to table: we deliver the best bananas, guaranteed." />
+    <meta property="og:image" content="images/coding-portfolio-ogimage.png"/>
+    <meta property=”og:type” content=”webpage”/>
+    <script type="application/ld+json">
+    {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "BananoPack: Banana Unpacking Services Worldwide",
+            "description": "Looking to unpack bananas efficiently? Discover BananoPack's expert banana unpacking services available in EU. Contact us today!",
+            "author": {
+                "@type": "Person",
+                "name": "Volodymyr Popovych"
+            }            
+    }
+    </script> 
+</head>
+<body>
+<div class="page-content-wrapper">
+    <div class="header-banner">
+        <div class="banana-logo">
+            <h2>Banana Bonanza 🍌</h2>
+            <p>Your Source for the Freshest Bananas</p>
+        </div>
+        <div class="coupon-button-section">
+            <a id="couponButton" class="coupon-banner-button">Get 30% Discount!</a>
+            <p class="coupon-message" style="font-size: 0.6em; margin-bottom: 0;">On your first order</p>
+            <p class="coupon-timer-message" style="font-size: 1em; margin-top: 10; margin-bottom: 0; color: rgb(121, 98, 8);">Offer ends in: <span id="coupon-timer"></span></p>
+        </div>
+    </div>
+
+    <div id="coupon-modal-overlay" class="modal-overlay">
+       <div class="coupon-banner-content"> 
+            <button id="closeButton" onclick="closeCouponModal()">X</button>
+            <h2 style="margin-top: 0; text-align: center;">Congratulations! 🎉</h2>
+            <p>You have unlocked a 30% discount code!</p>
+        <div id="coupon-code-display" style="display: none;">
+            <b id="couponCode"></b>
+        </div>
+            <button id="copyButton" onclick="copyCouponCode()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                </svg>
+                    Copy the Code
+                </button>
+            <p id="copyMessage" style="display:none; color: green; font-size: 0.9em; margin-top: 10px;">Coupon code copied to clipboard!</p>
+            <button id="go-to-order-button" href="#orderSection">Go to Order!</button>
+       </div>
+    </div>
+
+    <breadcrumbs class="breadcrumbs-banana">
+        <a href="../index.html#projectsContainer">Go Home</a>
+    </breadcrumbs>
+    
+    <div class="mainContainer bananaMainContainer">
+            <h1 id="h1">Order Fresh Bananas <br> with EU Delivery</h1>
+            <p class="paragraph-1">In a world full of choices, why settle for anything less than the best? <br> <b>Our mission is simple:</b> to bring you the freshest, most delicious bananas anytime you need it!</b></p>
+            
+            <p class="paragraph-1-CTA">Calculate the approximate price of service / month:</p>
+
+            <input type="number" placeholder="Num. of bananas eaten per week" id="numBananas1" style="width: 60%;   padding: 10px 12px; border: 1px solid #d7c69b; border-radius: 8px; background-color: #ffefbae3; font-size: 1rem; line-height: 1.4; box-sizing: border-box; margin-bottom: 20px; min-width: 250px;" />
+
+            <div id="servicePriceContainer" style="display: none; margin-bottom: 8px; padding: 15px; border: 2px solid #4a2e00; background-color: #fff8dc; border-radius: 8px;">
+                    <p class="servicePrice"></p>
+            </div>
+
+            <button id="actionButton">Calculate</button>
+
+            <p id="errorMessage" style="color: rgb(199, 5, 5); display: none; margin-top: 10px;"></p>
+    </div>
+    <div class="bananaMainContainer mainContainer" id="orderSection">  
+        <h2>Place Your Banana Order</h2>
+        <p class="order-p" style="font-size: 0.9em;">Fill in the form below. We will send the order and payment details to your email:</p>
+            <form id="orderForm" class="form-control">
+                <!-- Name -->
+                <label for="name">Name*</label>
+                <input type="text" id="name" name="name" required minlength="3" title="Username should be at least 3 letters long">
+                <br>
+
+                <!-- Email -->
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+
+                <!-- Number of Bananas -->
+                <label for="numBananas">Number of bananas you'd like to order*</label>
+                <input
+                    type="number"
+                    id="numBananas"
+                    name="numBananas"
+                    required
+                    min="10"
+                    max="1400"
+                    step="1"
+                    inputmode="numeric"
+                    title="Number of Bananas should be at least 10, and at max 1400"
+                >
+                <br>
+
+                <!-- Delivery Plan (single choice) -->
+                <fieldset style="border:none; padding:0; margin:0 0 4px 0;">
+                    <legend>Delivery plan*</legend>
+                    <p style="font-size: 0.8em; text-align: start; margin-top: 0; margin-bottom: 16px;">(How often would you like us to deliver)</p>
+                    <label>
+                    <input type="radio" name="deliveryPlan" value="monthly" required>
+                    Monthly
+                    </label>
+                    <label style="margin-left:16px;">
+                    <input type="radio" name="deliveryPlan" value="one-time">
+                    One-time Delivery
+                    </label>
+                </fieldset>
+
+                <!-- Address -->
+                <h2 style="margin-bottom: 8px;">Delivery Address</h2>
+
+                <!-- Country (EU only) -->
+                <select id="country" name="country" required>
+                    <option value="" disabled selected>Select your EU country*</option>
+                    <option>Austria</option>
+                    <option>Belgium</option>
+                    <option>Bulgaria</option>
+                    <option>Croatia</option>
+                    <option>Cyprus</option>
+                    <option>Czechia</option>
+                    <option>Denmark</option>
+                    <option>Estonia</option>
+                    <option>Finland</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                    <option>Greece</option>
+                    <option>Hungary</option>
+                    <option>Ireland</option>
+                    <option>Italy</option>
+                    <option>Latvia</option>
+                    <option>Lithuania</option>
+                    <option>Luxembourg</option>
+                    <option>Malta</option>
+                    <option>Netherlands</option>
+                    <option>Poland</option>
+                    <option>Portugal</option>
+                    <option>Romania</option>
+                    <option>Slovakia</option>
+                    <option>Slovenia</option>
+                    <option>Spain</option>
+                    <option>Sweden</option>
+                </select>
+
+                <!-- City, Street, Postal (inline on desktop, stacked on mobile) -->
+                <div class="address-grid">
+                    <div class="field" id="city">
+                    <label for="city">City*</label>
+                    <input type="text" id="city" name="city" required minlength="2" autocomplete="address-level2">
+                    </div>
+                    <div class="field">
+                    <label for="street">Street and house no.*</label>
+                    <input type="text" id="street" name="street" required minlength="5" autocomplete="address-line1">
+                    </div>
+                    <div class="field">
+                    <label for="postal">Postal code*</label>
+                    <input type="text" id="postal" name="postal" required pattern="[A-Za-z0-9 \-]{3,10}" title="Enter 3–10 characters (letters, numbers, spaces or hyphens)" autocomplete="postal-code">
+                    </div>
+                </div>
+
+                <!-- Coupon -->
+                <label for="coupon">Coupon for a discount</label>
+                <input type="text" id="coupon" name="coupon" placeholder="Optional">
+
+                <!-- Submit -->
+                <input type="submit" id="orderButton" style="margin-bottom: 2%; margin-top: 12px;" value="Send the Details!" function="formSubmission()">
+                <label for="orderButton" style="font-size: 0.8em; margin-top: 0;">
+                    By clicking the button you agree to our
+                    <a href="privacy-policy.html" target="_blank" style="color: #5b3a00; text-decoration: underline;">Privacy Policy</a>
+                </label>
+                <p id="formMessage" style="display:none;"></p>
+            </form>
+    </div>
+</div>
+<script src="form-validation.js"></script>
+<script src="script-coupon-generation.js"></script>
+<script src="script-service-price-calculation.js"></script>
+      <footer class="footer bananaFooter">
+            <hr>
+            <p class="copyright bananaStyle">&copy; <span id="curYr"></span> Volodymyr Popovych. All rights reserved.<br><br>Contact: <a href="mailto:vovapopovy4@gmail.com" id="email">vova.popovy4@gmail.com</a></p>
+      </footer>
+      <script>
+            document.getElementById('curYr').textContent = new Date().getFullYear();
+      </script>
+</body>
+</html>

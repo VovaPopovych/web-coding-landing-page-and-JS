@@ -1,0 +1,428 @@
+
+@media only screen and (max-width: 600px) {
+    .header-banner {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    #h1 {
+        font-size: 1.7em;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    .bananaMainContainer {
+        padding: 15px;
+        width: 100%;
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.page-content-wrapper {
+    background-color: #ffefbae3;
+    flex-grow: 1; /* This pushes the footer down */
+    padding: 20px 20px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.header-banner {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffefbae3;
+    color: #4a2e00;
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    max-width: 600px;
+    padding: 20px;
+    margin: 0px auto 40px auto;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.coupon-button-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coupon-banner-button {
+    background-color: #5b3a00;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px; /* Padding creates the responsive width */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+.coupon-banner-button:hover {
+    background-color: #4a2e00;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100000;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.coupon-banner-content {
+    background-color: #fff3b0;
+    border: 2px solid #5b3a00;
+    border-radius: 10px;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* This was done specifically to control the position of the #closeButton */
+}
+
+#closeButton {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: transparent !important;
+    color: #5b3a00;
+    border: none;
+    width: 10px !important;
+    height: 30px !important;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1 !important;
+    justify-content: center;
+    width: auto !important;  /* Override the 40% width */
+    min-width: auto !important;  /* Override the 200px min-width */
+    max-width: 150px;  /* Set a reasonable max width */
+    font-family: 'Inter', sans-serif;
+ }
+
+
+#couponCode {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #5b3a00;
+}
+
+#coupon-code-display {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+    color: #4a2e00;
+}
+
+.breadcrumbs-banana {
+    font-size: 0.9em;
+}
+
+.breadcrumbs-banana a {
+    text-decoration: underline;
+}
+
+.bananaMainContainer {
+    background-color: #e7c75d;
+    margin-top: 40px;
+    padding: 40px auto;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+}
+
+#h1 {
+    color: #5b3a00;
+    margin-bottom: 28px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+
+a {
+    color: #5b3a00;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+}
+
+h2 {
+    color: #4a2e00;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+p {
+    color: #231600c6;
+    font-weight: 500;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.paragraph-1 {
+    color: #231600c6;
+    font-weight: 400;
+    font-size: 1.1em;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.paragraph-1-CTA {
+    color: #231600c6;
+    font-weight: 500;
+    padding-top: 0px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+#actionButton, #go-to-order-button {
+    background-color: #5b3a00;
+    color: #ffffff;
+    border: none;
+    padding: 10px 10px;
+    min-width: 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 12px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+#actionButton:hover, #go-to-order-button:hover {
+    background-color: #4a2e00;
+}
+
+.bananaStyle {
+    color: #4a2e00;
+    font-weight: 500;
+}
+
+.orderSection {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    display: block;
+    background-color: #fff3b0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+.order-p {
+    color: #231600c6;
+    font-weight: 500;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 28px;
+    font-family: 'Inter', sans-serif;
+}
+
+#orderForm {
+  max-width: 400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-control {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 6px;
+}
+
+#orderForm input[type="text"],
+#orderForm input[type="email"],
+#orderForm input[type="number"],
+#orderForm input[type="coupon"],
+#orderForm select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d7c69b;
+  border-radius: 8px;
+  background-color: #ffefbae3;
+  font-size: 1rem;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="coupon"]:focus, input[type="number"]:focus, input[type="radio"]:focus, select:focus {
+    border-color: #5b3a00;
+    outline: none; 
+    box-shadow: 0 0 5px rgba(91, 58, 0, 0.5);
+}
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    resize: vertical;
+    font-family: 'Inter', sans-serif;
+}
+
+label, legend {
+  font-size: 0.95rem;
+  color: #4a2e00;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    align-items: end;
+    align-content: center;
+    justify-items: stretch;
+    align-self: center;
+    justify-self: center;
+  }
+  .address-grid .field {
+    display: flex;
+    padding-bottom: 8px;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .address-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 8px 0 12px;
+    text-align: center;
+  }
+  fieldset label {
+    margin: 0 10px;
+  }
+
+  fieldset input[type="radio"] {
+    transform: translateY(1px);
+  }
+
+#orderButton {
+    background-color: #5b3a00;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 12px 2px 20px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+.orderButton:hover {
+    background-color: #4a2e00;
+}
+
+.bananaFooter {
+    background-color: #ffefbae3;
+    color: #4a2e00;
+}
+
+#email {
+    color: #4a2e00b6;
+    text-decoration: none;
+}
+
+
+
+#copyButton {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05)) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #5b3a00 !important; 
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    padding: 8px 12px !important;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    width: auto !important;
+    min-width: auto !important;
+    max-width: 150px;
+    font-family: 'Inter', sans-serif;
+}
+
+#copyButton:hover {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.08)) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    color: #4a2e00 !important;
+}
+
+#copyButton:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+#copyButton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+}
+
+#copyButton:hover::before {
+    left: 100%;
+}

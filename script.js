@@ -1,14 +1,16 @@
-// This is your JavaScript file
 
-// You learned about document.getElementById in FCC.
-// This gets a reference to the HTML button element by its ID.
 const ctaButton = document.getElementById('first-ctaButton');
 const outputArea = document.getElementById('first-cta-outputArea');
 const projectList = document.getElementById('projectsContainer');
 
-// This is an 'event listener' - it waits for the button to be clicked.
+document.addEventListener('DOMContentLoaded', function() {
+    const projectList = document.getElementById('projectsContainer');
+    if (window.location.hash === '#projectsContainer') {
+        projectList.style.display = 'flex';
+    }
+});
+
 ctaButton.addEventListener('click', function() {
-    // You can use any of your basic JS concepts here:
 
     let ctaButton = this.clicks; // Using 'this' to refer to the button
     ctaButton = ctaButton || 0; // Initialize if undefined
@@ -49,8 +51,10 @@ ctaButton.addEventListener('click', function() {
     if (ctaButton >= 2) {
         projectListDiv.innerHTML = '';
     }
-});
 
+    window.location.hash = 'projectsContainer';
+
+});
 
 // A simple function you learned how to declare
 function greet(name) {
