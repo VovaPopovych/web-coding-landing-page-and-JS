@@ -84,7 +84,7 @@
     <div class="bananaMainContainer mainContainer" id="orderSection">  
         <h2>Place Your Banana Order</h2>
         <p class="order-p" style="font-size: 0.9em;">Fill in the form below. We will send the order and payment details to your email:</p>
-            <form id="orderForm" class="form-control">
+            <form id="orderForm" class="form-control" action="https://formspree.io/f/xrbylkrp" method="POST">
                 <!-- Name -->
                 <label for="name">Name*</label>
                 <input type="text" id="name" name="name" required minlength="3" title="Username should be at least 3 letters long">
@@ -113,7 +113,7 @@
                 <!-- Delivery Plan (single choice) -->
                 <fieldset style="border:none; padding:0; margin:0 0 4px 0;">
                     <legend>Delivery plan*</legend>
-                    <p style="font-size: 0.8em; text-align: start; margin-top: 0; margin-bottom: 16px;">(How often would you like us to deliver)</p>
+                    <p style="font-size: 0.8em; margin-top: 8px; margin-bottom: 16px;">(How often would you like us to deliver)</p>
                     <label>
                     <input type="radio" name="deliveryPlan" value="monthly" required>
                     Monthly
@@ -178,9 +178,13 @@
                 <!-- Coupon -->
                 <label for="coupon">Coupon for a discount</label>
                 <input type="text" id="coupon" name="coupon" placeholder="Optional">
+                
+                <!-- Hidden fields for Formspree -->
+                <input type="hidden" name="_subject" value="New Banana Order">
+                <input type="text" name="_gotcha" style="display:none">
 
                 <!-- Submit -->
-                <input type="submit" id="orderButton" style="margin-bottom: 2%; margin-top: 12px;" value="Send the Details!" function="formSubmission()">
+                <input type="submit" id="orderButton" style="margin-bottom: 2%; margin-top: 12px;" value="Send the Details!">
                 <label for="orderButton" style="font-size: 0.8em; margin-top: 0;">
                     By clicking the button you agree to our
                     <a href="privacy-policy.html" target="_blank" style="color: #5b3a00; text-decoration: underline;">Privacy Policy</a>
