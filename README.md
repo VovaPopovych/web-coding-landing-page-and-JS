@@ -12,7 +12,7 @@ This project demonstrates my understanding of structuring, styling webpages, and
 
 ## 🚀 Live
 
-[See the project live in action](https://vovapopovych.github.io/web-coding-portfolio-js/jsProjects/marketing-blocks.html)
+[See the project live](https://vovapopovych.github.io/web-coding-portfolio-js/jsProjects/marketing-blocks.html)
 
 ## ✨ Features
 
@@ -32,7 +32,7 @@ This project demonstrates my understanding of structuring, styling webpages, and
 
 - DOM Manipulation: Uses JavaScript to read the page content and inject the calculated result back into the HTML.
 
-- Configurable Speed: The calculation uses a common industry standard of [Insert Words Per Minute (e.g., 200)] words per minute (WPM).
+- Configurable Speed: The calculation uses a common industry standard of 238 words per minute (WPM).
 
 ## 🛠️ Technologies Used
 
